@@ -6,8 +6,8 @@ def define_env(env):
 
         rows = [
             f"| Created date | { date } |",
-            f"| Previous knowledge | { prev_know } |" if prev_know is not None else "None required",
-            f"""| What you will learn | {''.join([f'<div style="background:var(--md-default-fg-color--light);float:left;margin-left:8px;padding:4px;color:var(--md-default-bg-color);margin-bottom:8px;border-radius:0.1rem;">{skill}</div>' for skill in skills])} |"""
+            f"| Previous knowledge | { prev_know if prev_know is not None else 'None required'} |",
+            f"""| What you will learn | {''.join([f'<div class="what-you-will-learn">{skill}</div>' for skill in skills])} |"""
             if skills is not None
             else "",
             f"""| Mentor{ 's' if len(mentors) > 1 else ''} | {''.join([f'<a href="{site}/contributing/#mentor-{mentor}"><img style="border-radius:50%;width:50px;height:50px;margin-right:8px;" src="https://github.com/{ mentor }.png"></a>' for mentor in mentors])} |"""
@@ -25,9 +25,9 @@ def define_env(env):
 |-----|-------|
 {rows}
 
-## Description
+{'## Description' if description else ''}
 
-{f'<div style="text-align: justify"> { description } </div>'}
+{f'<div style="text-align: justify"> { description } </div>' if description else ''}
 """
 
     @env.macro
