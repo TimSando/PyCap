@@ -147,3 +147,13 @@ Linters can also be installed as separate extensions within your IDE of choice r
 Because they are simply a program looking through your code and comparing it against installed libraries, dependencies and a range of other factors, they can be prone to identifying false positives, especially if you're working on remote development in containers where they're unable to access what libraries you have installed. However, linters are still are an incredibly important and valuable tool to support writing understandable and explainable code.
 
 To help you when working on your capstone project, we've included a simple script *`coverage.sh`* that will go through and run autoflake, flake8, isort and black to format the code and use pytest, mypy and interrogate to generate code, type annotations and docstring coverage. You can look further into that file for more information around specific arguments.
+
+## Adding TODO comments
+
+We've touched on how adding comments to your code can help other developers understand what a specific line of code does. Another use of comments is to identify areas for future development that you might not have time for right now, don't want to forget about and want to easiy find later on. The most common method of doing this is by adding a TODO comment.
+
+```python
+# TODO: Look into why this is taking so long
+```
+
+This allows a developer to search through the code for TODO to quickly locate areas that have previously been identified for improvement. Which can be especially handy if you're handing off the code to someone else who isn't as comfortable with the code as you are.
