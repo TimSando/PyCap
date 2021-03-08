@@ -1,13 +1,14 @@
 ---
 title: Handling Errors
-description: In this session we'll go through what an error is in Python, how it's treated and how to handle them within your code
+description: In this session we'll go through what an error is in Python, how it's treated by Python, how to handle them within your code and how to find the source of the errors within your code.
 prev_know: None
 skills:
   - Try Except
   - Exception
   - Raising Errors
   - Debugging
-date: 02/02/2021
+  - Debuggers
+date: 09/02/2021
 mentors: 
   - TimSando
   - ghandic
@@ -153,3 +154,5 @@ An example of an active debugger can be seen below:
 We can see that the code has been stopped on a specific line with a red dot. This is known as a breakpoint and you can scatter those throughout your code to stop the code execution wherever you want. If you look in the left panel, the benefit of this approach vs using print statements is when you hit a breakpoint every variable's value is captured at that point in time. This gives you a solid view across all local and global variables that have been set and which can be incredibly helpful if you're not quite sure what the source of the problem is.
 
 Another important aspect of debuggers is the ability to set the value of variable while the code is running. This allows you to make changes on the fly to test the code and check different formats, types etc. without yet having to design more robust dummy data that can replicate it.
+
+Handling exceptions is an important part of writing any functional code and is crucial for when you want to start writing your own programs whether they're complex large pieces of software, or simple commandline programs like we'll cover in the next section.
