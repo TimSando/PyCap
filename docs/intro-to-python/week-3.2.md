@@ -31,7 +31,9 @@ def type_hunt(var, var_i):
 we have defined a function that has two input variables var and var_i and both of them are required (they don't have a default value). However, we have no idea what format/type the function is expecting var and var_i to be as var_i. If we write the same function with type hinting, we'd get the following:
 
 ```python
-def type_hunt_(var: list[str], var_i: int = 2):
+from typing import List
+
+def type_hunt_(var: List[str], var_i: int = 2):
   total_var = var[0] + str(var_i)
   return total_var
 ```
@@ -44,7 +46,7 @@ Type hinting in this way also allows an IDE or type hinter to visually alert you
 The other aspect of type hinting is defining what is being returned.
 
 ```python
-def type_hunt_(var: list[str], var_i: int) -> str:
+def type_hunt_(var: List[str], var_i: int) -> str:
   total_var = var[0] + str(var_i)
 
   return total_var
